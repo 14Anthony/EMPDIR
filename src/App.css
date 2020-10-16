@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
-.bold {
+.orangered {
+  background-color: orangered;
+}
+.bolder {
   font-weight: bolder;
 }

@@ -77,10 +77,19 @@ class App extends Component {
       style.backgroundColor = 'orangered'
     }
 
+    let classes = [];
+
+    if (this.state.persons.length <= 3) {
+      classes.push('bolder');
+
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push('orangered')
+    }
     return (
       <div className="App">
         <h1>Employee Directory</h1>
-        <p>Meet your Collegues</p>
+        <p className={classes.join('')}>Meet your Collegues</p>
         <button
           style={style}
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
