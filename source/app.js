@@ -20,6 +20,9 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>Changeable Employee Director</h1>
+                <p></p>
+                <p></p>
+                <input />
             </div>
         )
     }
