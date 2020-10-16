@@ -15,6 +15,32 @@ class App extends Component {
         otherState: 'Changed State',
         showPersons: false
     };
+    //  POSSIBLE RESUSEABLE CODE FROM TODO REPOconst filterTodos = (term) => {
+
+    //     Array.from(list.children)
+    //     .filter((todo) => !todo.textContent.toLowerCase().includes(term))
+    //     // console.log(todo.textContent);
+    //     // return true;
+
+    //     .forEach((todo) => todo.classList.add('filtered'));
+
+
+    // Array.from(list.children)
+    //     .filter((todo) => todo.textContent.toLowerCase().includes(term))
+    //     // console.log(todo.textContent);
+    //     // return true;
+
+    //     .forEach((todo) => todo.classList.remove('filtered'));
+
+    // };
+
+
+    // search.addEventListener('keyup', () => {
+
+    // const term = search.value.trim().toLowerCase();
+    // filterTodos(term);
+
+    // });
 
     render() {
         return (
