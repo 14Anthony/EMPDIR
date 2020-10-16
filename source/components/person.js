@@ -7,7 +7,6 @@ const person = (props) => {
             <p >Employ: {props.name}</p>
             <p>I am {props.age}</p>
             <p>Find me at ext {props.ext}</p>
-            <input />
         </div>
     )
 }
