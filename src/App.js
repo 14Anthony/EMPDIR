@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
-import styled from 'styled-components';
-
-const StyledButton = styled.button`
-background-color: ${props => props.alt ? 'dodgerblue' : 'orangered'};
-color: white;
-font: inherit;
-border: 1px solid darkgrey;
-padding: 10px;
-cursor: pointer;
 
 
-&:hover: {
-  backgroundColor: ${props => props.alt ? 'lightblue' : 'lightred'};
-  color: black;
-`;
+
 
 class App extends Component {
   state = {
@@ -89,30 +77,28 @@ class App extends Component {
       //   }
       // }
 
-      let classes = [];
+      let assignedClasses = [];
 
       if (this.state.persons.length <= 3) {
-        classes.push('bolder');
+        assignedClasses.push(classes.bolder);
 
       }
       if (this.state.persons.length <= 1) {
-        classes.push('orangered')
+        assignedClasses.push(classes.orangered)
       }
       return (
 
 
-        <div className="App">
+        <div className={classes.App}>
           <h1>Employee Directory</h1>
-          <p className={classes.join('')}>Meet your Collegues</p>
-          <StyledButton
-            alt={this.state.showPersons}
-            style={style}
-            onClick={this.togglePersonsHandler}>Toggle Persons</StyledButton>
+          <p className={assignedClasses.join('')}>Meet your Collegues</p>
+          <button
+            className={classes.Button}
+            onClick={this.togglePersonsHandler}> Toggle Employee</button>
           {persons}
         </div>
 
       );
-    };
 
 
-    export default App;
+      export default App;

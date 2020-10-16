@@ -7,3 +7,16 @@
 .bolder {
   font-weight: bolder;
 }
+.Button {
+  background-color: dodgerblue;
+  color: white;
+  font: inherit;
+  border: 1px solid darkgrey;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background-color: lightblue;
+  color: black;
+}
