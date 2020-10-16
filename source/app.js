@@ -46,17 +46,17 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>Changeable Employee Director</h1>
+                <h1>Employee Director</h1>
                 <p></p>
                 <p></p>
                 <Person id={this.state.persons[0].id} name={this.state.persons[0].name} tenure={this.state.persons[0].tenure} ext={this.state.persons[0].ext} />
-                <Person />
-                <Person />
-                <Person />
-                <Person />
-                <Person />
-                <Person />
-                <Person />
+                <Person id={this.state.persons[1].id} name={this.state.persons[1].name} tenure={this.state.persons[1].tenure} ext={this.state.persons[1].ext} />
+                <Person id={this.state.persons[2].id} name={this.state.persons[2].name} tenure={this.state.persons[2].tenure} ext={this.state.persons[2].ext} />
+                <Person id={this.state.persons[3].id} name={this.state.persons[2].name} tenure={this.state.persons[3].tenure} ext={this.state.persons[3].ext} />
+                <Person id={this.state.persons[4].id} name={this.state.persons[4].name} tenure={this.state.persons[4].tenure} ext={this.state.persons[4].ext} />
+                <Person id={this.state.persons[5].id} name={this.state.persons[5].name} tenure={this.state.persons[5].tenure} ext={this.state.persons[5].ext} />
+                <Person id={this.state.persons[6].id} name={this.state.persons[6].name} tenure={this.state.persons[6].tenure} ext={this.state.persons[6].ext} />
+
             </div>
         )
     }
