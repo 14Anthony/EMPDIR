@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium from 'radium';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+background-color: ${props => props.alt ? 'dodgerblue' : 'orangered'};
+color: white;
+font: inherit;
+border: 1px solid darkgrey;
+padding: 10px;
+cursor: pointer;
+
+
+&:hover: {
+  backgroundColor: ${props => props.alt ? 'lightblue' : 'lightred'};
+  color: black;
+`;
 
 class App extends Component {
   state = {
@@ -50,18 +64,7 @@ class App extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: 'dodgerblue',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid darkgrey ',
-      padding: '10px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'dodgerblue',
-        color: 'black'
-      }
-    };
+
 
     let persons = null;
 
@@ -79,30 +82,37 @@ class App extends Component {
           })}
         </div>
       );
-      style.backgroundColor = 'orangered'
-    }
+      // style.backgroundColor = 'orangered'
+      // style[':hover'] = {
+      //   backgroundColor: 'lightblue',
+      //   color: 'black'
+      //   }
+      // }
 
-    let classes = [];
+      let classes = [];
 
-    if (this.state.persons.length <= 3) {
-      classes.push('bolder');
+      if (this.state.persons.length <= 3) {
+        classes.push('bolder');
 
-    }
-    if (this.state.persons.length <= 1) {
-      classes.push('orangered')
-    }
-    return (
-      <div className="App">
-        <h1>Employee Directory</h1>
-        <p className={classes.join('')}>Meet your Collegues</p>
-        <button
-          style={style}
-          onClick={this.togglePersonsHandler}>Toggle Persons</button>
-        {persons}
-      </div>
-    );
-    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
-  }
-}
+      }
+      if (this.state.persons.length <= 1) {
+        classes.push('orangered')
+      }
+      return (
 
-export default Radium(App);
+
+        <div className="App">
+          <h1>Employee Directory</h1>
+          <p className={classes.join('')}>Meet your Collegues</p>
+          <StyledButton
+            alt={this.state.showPersons}
+            style={style}
+            onClick={this.togglePersonsHandler}>Toggle Persons</StyledButton>
+          {persons}
+        </div>
+
+      );
+    };
+
+
+    export default App;
