@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import classes from './App.css';
+import './App.css';
 import Person from './Person/Person';
-
-
-
 
 class App extends Component {
   state = {
@@ -52,7 +49,14 @@ class App extends Component {
   }
 
   render() {
-
+    const style = {
+      backgroundColor: 'dodgerblue',
+      color: 'white',
+      font: 'inherit',
+      border: '1px solid darkgrey ',
+      padding: '10px',
+      cursor: 'pointer'
+    };
 
     let persons = null;
 
@@ -70,35 +74,21 @@ class App extends Component {
           })}
         </div>
       );
-      // style.backgroundColor = 'orangered'
-      // style[':hover'] = {
-      //   backgroundColor: 'lightblue',
-      //   color: 'black'
-      //   }
-      // }
+      style.backgroundColor = 'orangered'
+    }
 
-      let assignedClasses = [];
+    return (
+      <div className="App">
+        <h1>Employee Directory</h1>
+        <p>Meet your Collegues</p>
+        <button
+          style={style}
+          onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        {persons}
+      </div>
+    );
+    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
+  }
+}
 
-      if (this.state.persons.length <= 3) {
-        assignedClasses.push(classes.bolder);
-
-      }
-      if (this.state.persons.length <= 1) {
-        assignedClasses.push(classes.orangered)
-      }
-      return (
-
-
-        <div className={classes.App}>
-          <h1>Employee Directory</h1>
-          <p className={assignedClasses.join('')}>Meet your Collegues</p>
-          <button
-            className={classes.Button}
-            onClick={this.togglePersonsHandler}> Toggle Employee</button>
-          {persons}
-        </div>
-
-      );
-
-
-      export default App;
+export default App;
